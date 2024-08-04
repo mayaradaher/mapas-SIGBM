@@ -35,7 +35,7 @@ jobs:
     - name: Configure o Git
       run: |
         git config user.email "${{ env.GIT_USER_EMAIL }}"
-        git config user.name "${{ env.GIT_NAME }}"
+        git config user.name "${{ env.GIT_USER_NAME }}"
 
     - name: Adicionar arquivo gerado ao Git
       run: |
