@@ -185,4 +185,7 @@ pyrightconfig.json
 pyvenv.cfg
 pip-selfcheck.json
 
+# ignore yml file
+.github/workflows/daily_check_maps.yml
+
 # End of https://www.toptal.com/developers/gitignore/api/venv,python
