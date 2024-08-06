@@ -6,18 +6,19 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from mapas_inundacao import page
 
-# Carregando dados do dia anterior
+# Caminhos dos arquivos
 previous_file = "data/data_previous.xlsx"
+current_file = "data/data_today.xlsx"
+
+# Carregando dados do dia anterior
 if os.path.exists(previous_file):
     df_previous = pd.read_excel(previous_file)
 else:
     df_previous = pd.DataFrame()
 
-
 df_previous = df_previous.fillna("")
 
 # Salvando dados de hoje
-current_file = "data/data_today.xlsx"
 page.df_page.to_excel(current_file, index=False)
 
 # Carregando dados de hoje
@@ -36,9 +37,7 @@ for col in codigo_mapa_columns:
     for index, row in df_today.iterrows():
         id_barragem = row["ID Barragem"]
         if id_barragem in df_previous["ID Barragem"].values:
-            previous_value = df_previous[df_previous["ID Barragem"] == id_barragem][
-                col
-            ].values[0]
+            previous_value = df_previous[df_previous["ID Barragem"] == id_barragem][col].values[0]
             current_value = row[col]
             # Verificando se a coluna estava vazia no df_previous e se agora tem um valor
             if previous_value == "" and current_value != "":
