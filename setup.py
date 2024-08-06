@@ -77,9 +77,7 @@ if barragens_com_novas_colunas:
     try:
         server = smtplib.SMTP(server_smtp, port)
         server.starttls()
-
         server.login(sender_email, password)
-
         server.sendmail(sender_email, receive_email, msg.as_string())
         print("E-mail enviado com sucesso")
     except Exception as e:
