@@ -40,7 +40,6 @@ jobs:
     - name: Adicionar arquivo gerado ao Git
       run: |
         git add data/data_previous.xlsx
-        git add data/data_today.xlsx
 
     - name: Checar status
       run: |
