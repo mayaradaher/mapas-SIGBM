@@ -53,7 +53,7 @@ server_smtp = "smtp.gmail.com"
 port = 587
 sender_email = os.getenv("SENDER_EMAIL")
 password = os.getenv("PASSWORD_EMAIL")
-receive_email = os.getenv("RECEIVE_EMAIL")
+receive_email = os.getenv("RECEIVE_EMAIL").split(",")
 subject = "Mapa de Inundação adicionado"
 
 # Enviando e-mail se houver novas colunas
@@ -69,7 +69,7 @@ if barragens_com_novas_colunas:
     # Criando o e-mail
     msg = MIMEMultipart()
     msg["From"] = sender_email
-    msg["To"] = receive_email
+    msg["To"] = ", ".join(receive_email)
     msg["Subject"] = subject
     msg.attach(MIMEText(body, "html"))
 
