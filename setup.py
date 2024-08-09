@@ -53,7 +53,7 @@ server_smtp = "smtp.gmail.com"
 port = 587
 sender_email = os.getenv("SENDER_EMAIL")
 password = os.getenv("PASSWORD_EMAIL")
-receive_email = os.getenv("RECEIVE_EMAIL").split(';')
+receive_email = os.getenv("RECEIVE_EMAIL")
 subject = "Mapa de Inundação adicionado"
 
 # Enviando e-mail se houver novas colunas
