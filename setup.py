@@ -54,7 +54,7 @@ port = 587
 sender_email = os.getenv("SENDER_EMAIL")
 password = os.getenv("PASSWORD_EMAIL")
 receive_email = os.getenv("RECEIVE_EMAIL").split(",")
-subject = "Mapa de Inundação adicionado"
+subject = "[TESTE] Mapa de Inundação adicionado"
 
 # Enviando e-mail se houver novas colunas
 if barragens_com_novas_colunas:
